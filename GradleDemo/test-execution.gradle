@@ -1,0 +1,15 @@
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+ compile 'org.seleniumhq.selenium:selenium-server:2.53.1'
+ compile 'junit:junit:4.12'
+}
+task (execute, dependsOn: 'classes', type:JavaExec) {
+   main = mainClass
+  classpath = sourceSets.main.runtimeClasspath
+}
